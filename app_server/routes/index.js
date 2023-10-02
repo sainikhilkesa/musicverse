@@ -1,6 +1,7 @@
+require('dotenv').config();
 var express = require('express');
 var router = express.Router();
-var ctrlCatalogue = require('../controllers/list');
+var ctrlCatalogue = require('../controllers/songs');
 var ctrlOthers = require('../controllers/others');
 /* Locations pages */
 router.get('/', ctrlCatalogue.homelist);
@@ -15,5 +16,7 @@ router.get('/songs/songs-catalogue', ctrlCatalogue.catalogue);
 /* Other pages */
 
 router.get('/about', ctrlOthers.about);
+router.get('/signin',ctrlOthers.signin);
+router.get('/register',ctrlOthers.register);
 
 module.exports = router;
